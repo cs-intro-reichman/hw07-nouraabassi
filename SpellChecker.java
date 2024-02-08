@@ -1,19 +1,22 @@
+
 public class SpellChecker {
-	
+
+
 	public static void main(String[] args) {
 		String word = args[0];
 		int threshold = Integer.parseInt(args[1]);
 		String[] dictionary = readDictionary("dictionary.txt");
 		String correction = spellChecker(word, threshold, dictionary);
 		System.out.println(correction);
-	                                          }
+	}
 
 	public static String tail(String str) {
 		if (str.length()>1) {
 			return str.substring(1);
 		} else {
 			return ("");
-		} }
+		}
+	}
 
 	public static int levenshtein(String word1, String word2) {
 		int a = word1.length();
@@ -25,7 +28,8 @@ public class SpellChecker {
 		if (a == 0) {
 			return b;
 		} else if (b == 0) {
-			return a;}
+			return a;
+		}
 		if (headA == headB) {
 			return levenshtein(tail(word1),tail(word2));
 		} else {
@@ -33,7 +37,8 @@ public class SpellChecker {
 			int case1 = Math.min(levenshtein(tail(word1),word2),levenshtein(word1,tail(word2)));
 			int case2 = Math.min(case1, levenshtein(tail(word1),tail(word2))); 
 			return (1 + case2);
-		} }
+		}
+	}
 
 	public static String[] readDictionary(String fileName) {
 		String[] dictionary = new String[3000];
@@ -56,11 +61,13 @@ public class SpellChecker {
 			if (levenshtein(word, dictionary[i]) <= threshold) {
 				found = true;
 				simWord = (levenshtein(word, dictionary[i]) < levenshtein(word, simWord)) ? dictionary[i] : simWord;
-			}}
+			}
+		}
 		if (found == true) {
 			return simWord;
 		} else {
 			return word;
+		}
 	}
-	}
+
 }
