@@ -24,8 +24,7 @@ public class HashTagTokenizerTester {
                 break;
             default:
                 System.out.println("Invalid function name.");
-        }
-    }
+        } }
 
     private static void testReadDictionary() {
         String[] result = HashTagTokenizer.readDictionary(FILE_NAME);
@@ -42,5 +41,4 @@ public class HashTagTokenizerTester {
         String[] dictionary = HashTagTokenizer.readDictionary(FILE_NAME);
         System.out.println("\nBreak HashTag:");
         HashTagTokenizer.breakHashTag(hashtag, dictionary);
-    }
-}
+    }}
