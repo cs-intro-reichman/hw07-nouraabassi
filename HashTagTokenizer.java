@@ -45,14 +45,8 @@ public class HashTagTokenizer {
 				System.out.println(hashtag.substring(0,i));
 				breakHashTag(hashtag.substring(i,N),dictionary);
 				break;
-			}
-        }
-    }
-
-}
-
-	
-	
+			}}}}
+    
 	public static void breakHashTag(String hashtag, String[] dictionary) {
 
 		// Base case: do nothing (return) if hashtag is an empty string.
