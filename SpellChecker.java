@@ -67,7 +67,6 @@ public class SpellChecker {
 			return simWord;
 		} else {
 			return word;
-		}
-	}
+		}}
 
 }
